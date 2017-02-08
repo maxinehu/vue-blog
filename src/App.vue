@@ -2,7 +2,7 @@
   <div id="app">
     <sidebar></sidebar>
     <div class="content">
-      <blog></blog>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 import Blog from './components/Blog'
 import Sidebar from './components/Sidebar'
+import VueRouter from 'vue-router'
 
 export default {
   name: 'app',
@@ -27,5 +28,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.text-right {
+  text-align: right;
 }
 </style>

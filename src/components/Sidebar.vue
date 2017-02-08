@@ -1,9 +1,12 @@
 <template>
   <nav>
     <ul>
-			<li v-for="title in titles"><a>{{title}}</a></li>
+			<router-link tag="li" v-for="article in articles" :to="'/blog/' + article.id"><a>{{ article.title }}</a></router-link>
     </ul>
-		<footer>Designed By Max</footer>
+		<footer>
+			<router-link to="/me" class="hi">Hi</router-link>
+			<p class="text-right">Designed By Max</p>
+		</footer>
   </nav>
 </template>
 
@@ -12,11 +15,11 @@ export default {
   name: 'sidebar',
   data () {
     return {
-			titles: [
-				'Welcome to Your Vue.js App 1',
-				'Welcome to Your Vue.js App 2',
-				'Welcome to Your Vue.js App 3',
-				'Welcome to Your Vue.js App Your Vue.js App 44',
+			articles: [
+				{title: 'Arcticle A', id: 101},
+				{title: 'Arcticle B', id: 102},
+				{title: 'Arcticle C', id: 103},
+				{title: 'Arcticle D', id: 104},
 			]
     }
   }
@@ -54,18 +57,41 @@ export default {
 		cursor: default;
 		transition: all 0.3s ease;
 	}
-	li:hover {
+	li a {
+		color: #333333;		
+		text-decoration: none;
+	}
+	li:hover, li.router-link-active {
 		background-color: #b5d1bb;
+	}
+	.hi {
+		position: absolute;
+		left: 0;
+    width: 30px;
+		font-weight: bold;
+		background-color: #a8baca;
+		line-height: 30px;
+		border-radius: 50%;
+		transition: all 0.3s ease;
+		text-decoration: none;
+		font-size: 13px;
+	}
+	.hi:hover{
+		border-radius: 0;
+		background-color: transparent;
 	}
 	footer {
 		position: absolute;
 		box-sizing: border-box;
-		padding: 10px;
+		padding-left: 30px;
 		bottom: 0;
 		width: 280px;
 		font-size: 10px;
-		text-transform: uppercase; 
-		text-align: right;
 		background-color: rgba(240,255,255, 0.9);
+	}
+	footer p {
+		padding: 8px;
+		margin: 0;
+		text-transform: uppercase; 
 	}
 </style>
