@@ -1,7 +1,7 @@
 <template>
   <nav>
     <ul>
-			<router-link tag="li" v-for="article in articles" :to="'/blog/' + article.id"><a>{{ article.title }}</a></router-link>
+			<router-link tag="li" v-for="article in articles" :to="'/blog/' + article.id">{{ article.title }}</router-link>
     </ul>
 		<footer>
 			<router-link to="/me" class="hi">Hi</router-link>
@@ -20,6 +20,18 @@ export default {
 				{title: 'Arcticle B', id: 102},
 				{title: 'Arcticle C', id: 103},
 				{title: 'Arcticle D', id: 104},
+				{title: 'Arcticle A', id: 105},
+				{title: 'Arcticle B', id: 106},
+				{title: 'Arcticle C', id: 107},
+				{title: 'Arcticle D', id: 108},
+				{title: 'Arcticle A', id: 201},
+				{title: 'Arcticle B', id: 202},
+				{title: 'Arcticle C', id: 203},
+				{title: 'Arcticle D', id: 204},
+				{title: 'Arcticle A', id: 205},
+				{title: 'Arcticle B', id: 206},
+				{title: 'Arcticle C', id: 207},
+				{title: 'Arcticle D', id: 208},
 			]
     }
   }
@@ -54,12 +66,9 @@ export default {
 	li {
 		padding: 20px;
 		font-size: 14px;
-		cursor: default;
+		cursor: pointer;
 		transition: all 0.3s ease;
-	}
-	li a {
 		color: #333333;		
-		text-decoration: none;
 	}
 	li:hover, li.router-link-active {
 		background-color: #b5d1bb;
