@@ -11,7 +11,6 @@
 import Blog from './components/Blog'
 import Sidebar from './components/Sidebar'
 import VueRouter from 'vue-router'
-
 export default {
   name: 'app',
   components: {
